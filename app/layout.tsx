@@ -1,11 +1,11 @@
 import "./globals.css"
 
-import { metaThemes, site } from "@/config"
+import { site } from "@/config"
 
-import { Background } from "@/components/background"
 import { Footer } from "@/components/footer"
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { Nav } from "@/components/nav"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,13 +69,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: `${site.url}/site.webmanifest`,
-}
-
-export const runtime = "edge"
-
-export const viewport: Viewport = {
-  themeColor: metaThemes.light,
 }
 
 const RootLayout = ({
@@ -85,23 +78,13 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            try {
-              if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.querySelector('meta[name="theme-color"]').setAttribute('content', '${metaThemes.dark}')
-              }
-            } catch (_) {}
-          `,
-          }} />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Background />
-        <main>{children}</main>
+        <Nav />
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

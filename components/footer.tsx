@@ -4,7 +4,7 @@ import { navLinks } from '@/config'
 
 export const Footer = () => {
   return (
-    <footer className='z-10 flex-none pt-32'>
+    <footer className='z-10 flex-none'>
       <div className='sm:px-8'>
         <div className='mx-auto w-full max-w-7xl lg:px-8'>
           <div className='border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40'>
@@ -15,7 +15,7 @@ export const Footer = () => {
                     {navLinks.map((link, i) => {
                       return (
                         <Link
-                          key={`footer_${i+1}_`}
+                          key={`footer_${i + 1}_`}
                           className='transition hover:text-zinc-500 dark:hover:text-zinc-400'
                           href={link.href}>
                           {link.text}

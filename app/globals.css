@@ -1,34 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
-
   --color-background: oklch(1 0 0);
   --color-foreground: oklch(0 0 0);
-  --color-primary: oklch(0.8 0 0);
-  --color-secondary: oklch(0.8 0 0 / 0.8);
-  --color-gray: oklch(0.8 0 0 / 0.9);
-  --color-text: oklch(0.2 0 0);
-  --color-text_dark: oklch(0.95 0 0);
-  --color-background_muted: oklch(0.95 0 0 / 0.7);
-
-  --radius-rounded_small: 0.5rem;
-  --radius-rounded_medium: 0.85rem;
-  --radius-rounded_large: 1rem;
-
-  --animate-heart-beat: heart-beat 1.5s ease 0s infinite alternate;
-
-  @keyframes heart-beat {
-    0%, 50%, 100% {
-      transform: scale(1, 1);
-    }
-    30%, 80% {
-      transform: scale(0.92, 0.95);
-    }
-  }
-
 }
 body {
-  color: var(--color-background);
-  background: var(--color-foreground);
+  color: var(--color-foreground);
+  background: var(--color-background);
   font-family: system-ui, sans-serif, Helvetica, Arial;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--color-background);
+    background: var(--color-foreground);
+  }
 }

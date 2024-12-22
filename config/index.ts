@@ -1,8 +1,8 @@
 export const navLinks = [
-  { href: '#', text: 'Nav' },
-  { href: '#', text: 'Links' },
-  { href: '#', text: 'Go' },
-  { href: '#', text: 'Here' },
+  { href: '/', text: 'Nav' },
+  { href: '/links', text: 'Links' },
+  { href: '/go', text: 'Go' },
+  { href: '/here', text: 'Here' },
 ]
 
 export const site = {
@@ -18,9 +18,4 @@ export const site = {
     twitter: "@cbmonx",
     github: "@cbmongithub",
   },
-}
-
-export const metaThemes = {
-  light: "#ffffff",
-  dark: "#000000",
 }
