@@ -1,19 +1,25 @@
+<p><a href="https://www.npmjs.com/package/create-next-tw-app"><img style='border-radius: 12px;filter: drop-shadow(0px 9px 10px #888888);' src="https://repository-images.githubusercontent.com/906940804/487f770a-319b-4285-a62c-7193bfd7dd49" alt="Create next tw app" /></a></p>
+
+[![npm](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&ts=1683906897&type=6e&v=1.0.9&x2=0)](https://www.npmjs.com/package/create-next-tw-app)
 # Nextv15 Tailwindv4 Starter
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured with Tailwind CSS v4. It's a great starting point for building an app or for anyone who wants to learn how to use Tailwind CSS v4.
 
 ## Getting Started
 
-First, run the development server:
+You can download and install the app by running the script. For example, with npm, it would be:
 
 ```bash
+npx create-next-tw-app my-app
+```
+
+Alternatively, you can download the project by cloning the repository or downloading the zip file, etc then install the dependencies:
+
+```bash
+git clone https://github.com/your-repo/nextv15_tailwindv4_starter.git
+cd nextv15_tailwindv4_starter
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

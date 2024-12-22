@@ -1,0 +1,24 @@
+{
+  "name": "create-next-tw-app",
+  "version": "0.1.0",
+  "description": "A script for generating a Next.js 15 Tailwindv4 app template.",
+  "bin": {
+    "create-next-tw-app": "./bin/create-next-tw-app.js"
+  },
+  "main": "./bin/create-next-tw-app.js",
+  "scripts": {
+    "start": "node ./bin/create-next-tw-app.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "path": "^0.12.7"
+  },
+  "author": "Christian B. Martinez",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
