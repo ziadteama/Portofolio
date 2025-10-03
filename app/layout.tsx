@@ -1,73 +1,53 @@
 import "./globals.css"
 
-import { site } from "@/config"
-
-import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter } from "next/font/google"
 import { Nav } from "@/components/nav"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
   title: {
-    default: site.name,
-    template: `%s - ${site.name}`,
+    default: "Ziad Teama - Engineer. Developer. Triathlete.",
+    template: "%s | Ziad Teama",
   },
-  metadataBase: new URL(site.url),
-  description: site.description,
+  description: "Electrical Engineering student with a passion for software development and embedded systems. From full-stack web apps to automotive software — always in motion.",
   keywords: [
-    "Next.js v15",
-    "Next.js 15 template",
-    "Tailwind CSS v4",
-    "Tailwind v4 template",
+    "Ziad Teama",
+    "Software Developer",
+    "Embedded Systems",
+    "Full-Stack Developer",
+    "Electrical Engineering",
+    "Triathlete",
+    "Next.js",
+    "React",
+    "TypeScript",
   ],
   authors: [
     {
-      name: site.name,
-      url: site.url,
-    },
-    {
-      name: "cbm",
-      url: "https://cbm.sh",
+      name: "Ziad Teama",
+      url: "https://github.com/ziadteama",
     },
   ],
-  creator: site.name,
+  creator: "Ziad Teama",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: site.url,
-    title: site.name,
-    description: site.description,
-    siteName: site.name,
-    images: [
-      {
-        url: site.ogImage,
-        width: 1200,
-        height: 630,
-        alt: site.name,
-      },
-    ],
+    url: "https://your-domain.com",
+    title: "Ziad Teama - Engineer. Developer. Triathlete.",
+    description: "Electrical Engineering student with a passion for software development and embedded systems.",
+    siteName: "Ziad Teama Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.description,
-    images: [site.ogImage],
-    creator: site.handles.twitter,
+    title: "Ziad Teama - Engineer. Developer. Triathlete.",
+    description: "Electrical Engineering student with a passion for software development and embedded systems.",
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
 }
 
@@ -77,15 +57,10 @@ const RootLayout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className={`${inter.variable} antialiased`}>
         <Nav />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   )
