@@ -72,7 +72,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.variable} ${orbitron.variable} ${rajdhani.variable} antialiased`}>
+      <body className={`${inter.variable} ${orbitron.variable} ${rajdhani.variable} antialiased bg-slate-950 text-white`}>
         <Nav />
         {children}
       </body>
