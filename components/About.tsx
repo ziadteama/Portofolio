@@ -59,7 +59,7 @@ export default function About() {
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             I build real software that runs in production. From full-stack web apps to embedded systems — 
-            I've deployed solutions that people and businesses use every day.
+            I&apos;ve deployed solutions that people and businesses use every day.
           </p>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function About() {
                 <span className="text-sport-orange">Production-Ready</span> Code
               </h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                I don't just write code — I build systems that scale. My experience ranges from web applications 
+                I don&apos;t just write code — I build systems that scale. My experience ranges from web applications 
                 handling real users to embedded systems running 24/7 in production environments.
               </p>
               <ul className="space-y-3">
