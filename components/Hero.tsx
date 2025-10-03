@@ -58,8 +58,9 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-                Electrical engineering student obsessed with building high-performance software and embedded systems. 
-                Discipline from triathlon training fuels my drive to ship resilient products.
+                Computer engineering student hunting for freelance and remote opportunities in software development. 
+                Specialized in full-stack web applications with a solid foundation in IoT and embedded systems. 
+                I bring the same relentless energy from triathlon training to shipping quality code.
               </p>
             </motion.div>
 
