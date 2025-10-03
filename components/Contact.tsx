@@ -5,11 +5,11 @@ import { Mail, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-auto relative overflow-hidden justify-center">
       {/* Background effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent " />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -23,10 +23,10 @@ export default function Contact() {
               Get In Touch
             </span>
             <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
-              Let's Build <span className="text-sport-blue">Together</span>
+              Let&apos;s Build <span className="text-sport-blue">Together</span>
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Whether you have a project in mind, want to collaborate, or just want to say hi — I'd love to hear from you!
+              Whether you have a project in mind, want to collaborate, or just want to say hi — I&apos;d love to hear from you!
             </p>
           </motion.div>
 
@@ -79,20 +79,22 @@ export default function Contact() {
               <div className="glass-card p-6">
                 <h4 className="font-bold mb-4">Connect With Me</h4>
                 <div className="flex gap-3">
-                  {[
-                    { name: 'GitHub', url: 'https://github.com/ziadteama', color: 'sport-blue' },
-                    { name: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', color: 'sport-green' },
-                  ].map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`px-4 py-2 bg-${link.color}/10 border border-${link.color}/30 rounded-lg hover:bg-${link.color} hover:text-white transition-all font-sport text-sm`}
-                    >
-                      {link.name}
-                    </a>
-                  ))}
+                  <a
+                    href="https://github.com/ziadteama"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-sport-blue/10 border border-sport-blue/30 rounded-lg hover:bg-sport-blue hover:text-white transition-all font-sport text-sm"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/yourprofile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-sport-green/10 border border-sport-green/30 rounded-lg hover:bg-sport-green hover:text-white transition-all font-sport text-sm"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -165,7 +167,7 @@ export default function Contact() {
               <div className="w-3 h-3 rounded-full bg-sport-green animate-pulse" />
               <span className="font-sport uppercase tracking-wider text-sm">Currently Available</span>
             </div>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-400 text-sm ">
               Open for freelance projects, collaborations, and full-time opportunities
             </p>
           </motion.div>

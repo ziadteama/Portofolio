@@ -42,12 +42,12 @@ export const Nav = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-bold font-sport cursor-pointer group"
+            className="text-2xl font-bold font-sport cursor-pointer group py-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -56,7 +56,7 @@ export const Nav = () => {
           </motion.button>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-10">
             {navLinks.map((link, index) => (
               <motion.li
                 key={link.text}
@@ -66,7 +66,7 @@ export const Nav = () => {
               >
                 <button
                   onClick={() => scrollToSection(link.href)}
-                  className="font-sport text-sm uppercase tracking-wider text-slate-300 hover:text-sport-blue transition-colors relative group"
+                  className="font-sport text-sm uppercase tracking-wider text-slate-300 hover:text-sport-blue transition-colors relative group py-2 px-1"
                 >
                   {link.text}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sport-blue group-hover:w-full transition-all duration-300" />

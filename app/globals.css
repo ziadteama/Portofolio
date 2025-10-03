@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Triathlete-inspired sporty color palette */
@@ -39,7 +38,7 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Rajdhani', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-rajdhani), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
   background-image: 
@@ -68,9 +67,18 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', monospace;
+  font-family: var(--font-orbitron), monospace;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.font-sport {
+  font-family: var(--font-orbitron), 'Orbitron', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.font-body {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
 }
 
 .hero-text {
@@ -287,6 +295,28 @@ h1, h2, h3, h4, h5, h6 {
 .btn-sport:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 40px rgba(0, 212, 255, 0.5);
+}
+
+/* Small button variant */
+.btn-sport-sm {
+  position: relative;
+  padding: 14px 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 0.875rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-sport-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
 }
 
 /* Progress timeline (race checkpoint style) */

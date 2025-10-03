@@ -6,7 +6,10 @@ export default function Skills() {
   const skillCategories = [
     {
       name: 'Web Development',
-      color: 'sport-blue',
+      color: '#00d4ff',
+      barColor: 'bg-gradient-to-r from-sport-blue to-cyan-400',
+      textColor: 'text-sport-blue',
+      lineColor: 'bg-sport-blue',
       skills: [
         { name: 'React / Next.js', level: 92, experience: '2+ years' },
         { name: 'TypeScript', level: 88, experience: '1.5+ years' },
@@ -16,7 +19,10 @@ export default function Skills() {
     },
     {
       name: 'Embedded & Systems',
-      color: 'sport-green',
+      color: '#00ff88',
+      barColor: 'bg-gradient-to-r from-sport-green to-emerald-400',
+      textColor: 'text-sport-green',
+      lineColor: 'bg-sport-green',
       skills: [
         { name: 'C / C++', level: 90, experience: '3+ years' },
         { name: 'Java', level: 82, experience: '2+ years' },
@@ -26,7 +32,10 @@ export default function Skills() {
     },
     {
       name: 'Data & Databases',
-      color: 'sport-orange',
+      color: '#ff6b35',
+      barColor: 'bg-gradient-to-r from-sport-orange to-orange-400',
+      textColor: 'text-sport-orange',
+      lineColor: 'bg-sport-orange',
       skills: [
         { name: 'PostgreSQL', level: 85, experience: '2+ years' },
         { name: 'Pandas / NumPy', level: 80, experience: '2+ years' },
@@ -48,8 +57,8 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/30 to-transparent">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-32 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/30 to-transparent">
+      <div className="container mx-auto px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +91,7 @@ export default function Skills() {
             >
               {/* Category Header */}
               <div className="flex items-center gap-4 mb-8">
-                <div className={`h-1 w-12 bg-${category.color} rounded-full`} />
+                <div className={`h-1 w-12 ${category.lineColor} rounded-full`} />
                 <h3 className="text-2xl md:text-3xl font-bold">{category.name}</h3>
               </div>
 
@@ -106,7 +115,7 @@ export default function Skills() {
                         </span>
                       </div>
                       <motion.span
-                        className={`text-${category.color} font-bold text-xl font-sport`}
+                        className={`${category.textColor} font-bold text-xl font-sport`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -120,7 +129,8 @@ export default function Skills() {
                     <div className="relative h-4 bg-slate-800/50 rounded-full overflow-hidden border border-slate-700/50">
                       {/* Background glow */}
                       <motion.div
-                        className={`absolute inset-0 bg-${category.color}/10`}
+                        className="absolute inset-0"
+                        style={{ backgroundColor: `${category.color}1a` }}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -128,10 +138,7 @@ export default function Skills() {
                       
                       {/* Fill bar */}
                       <motion.div
-                        className={`h-full relative overflow-hidden`}
-                        style={{
-                          background: `linear-gradient(90deg, var(--${category.color}), var(--${category.color}))`,
-                        }}
+                        className={`h-full relative overflow-hidden ${category.barColor}`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}

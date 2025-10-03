@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Award } from 'lucide-react';
-import Image from 'next/image';
 
 export default function Projects() {
   const projects = [
@@ -15,7 +14,12 @@ export default function Projects() {
       stats: { users: '500+', performance: '98%', rating: '4.8/5' },
       github: 'https://github.com/ziadteama',
       demo: null,
-      color: 'sport-blue',
+      color: '#00d4ff',
+      colorClass: 'text-sport-blue',
+      bgClass: 'bg-sport-blue/10',
+      borderClass: 'border-sport-blue/30',
+      hoverBorder: 'hover:border-sport-blue',
+      hoverBg: 'hover:bg-sport-blue',
       checkpoint: 1,
     },
     {
@@ -27,7 +31,12 @@ export default function Projects() {
       stats: { roles: '5', modules: '12', uptime: '99.9%' },
       github: 'https://github.com/ziadteama',
       demo: null,
-      color: 'sport-green',
+      color: '#00ff88',
+      colorClass: 'text-sport-green',
+      bgClass: 'bg-sport-green/10',
+      borderClass: 'border-sport-green/30',
+      hoverBorder: 'hover:border-sport-green',
+      hoverBg: 'hover:bg-sport-green',
       checkpoint: 2,
     },
     {
@@ -39,7 +48,12 @@ export default function Projects() {
       stats: { books: '1000+', reviews: '5000+', users: '200+' },
       github: 'https://github.com/ziadteama',
       demo: 'https://example.com',
-      color: 'sport-orange',
+      color: '#ff6b35',
+      colorClass: 'text-sport-orange',
+      bgClass: 'bg-sport-orange/10',
+      borderClass: 'border-sport-orange/30',
+      hoverBorder: 'hover:border-sport-orange',
+      hoverBg: 'hover:bg-sport-orange',
       checkpoint: 3,
     },
     {
@@ -51,7 +65,12 @@ export default function Projects() {
       stats: { components: '50+', charts: '15', responsive: '100%' },
       github: 'https://github.com/ziadteama',
       demo: 'https://example.com',
-      color: 'sport-blue',
+      color: '#00d4ff',
+      colorClass: 'text-sport-blue',
+      bgClass: 'bg-sport-blue/10',
+      borderClass: 'border-sport-blue/30',
+      hoverBorder: 'hover:border-sport-blue',
+      hoverBg: 'hover:bg-sport-blue',
       checkpoint: 4,
     },
     {
@@ -63,13 +82,18 @@ export default function Projects() {
       stats: { accuracy: '94%', datasets: '10+', models: '5' },
       github: 'https://github.com/ziadteama',
       demo: null,
-      color: 'sport-green',
+      color: '#00ff88',
+      colorClass: 'text-sport-green',
+      bgClass: 'bg-sport-green/10',
+      borderClass: 'border-sport-green/30',
+      hoverBorder: 'hover:border-sport-green',
+      hoverBg: 'hover:bg-sport-green',
       checkpoint: 5,
     },
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-32 relative overflow-hidden">
       {/* Race Track Background */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 1000 1000">
@@ -83,7 +107,7 @@ export default function Projects() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -123,7 +147,8 @@ export default function Projects() {
               >
                 {/* Checkpoint Marker */}
                 <motion.div
-                  className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-${project.color} items-center justify-center z-20 border-4 border-slate-950`}
+                  className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full items-center justify-center z-20 border-4 border-slate-950"
+                  style={{ backgroundColor: project.color }}
                   whileHover={{ scale: 1.2 }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -141,10 +166,10 @@ export default function Projects() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="glass-card p-8 hover:border-${project.color} transition-all duration-300">
+                  <div className={`glass-card p-8 ${project.hoverBorder} transition-all duration-300`}>
                     {/* Category Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className={`text-xs font-sport uppercase tracking-wider px-3 py-1 rounded-full bg-${project.color}/10 text-${project.color} border border-${project.color}/30`}>
+                      <span className={`text-xs font-sport uppercase tracking-wider px-3 py-1 rounded-full ${project.bgClass} ${project.colorClass} border ${project.borderClass}`}>
                         {project.category}
                       </span>
                       {project.stats.rating && (
@@ -156,7 +181,7 @@ export default function Projects() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-${project.color} transition-colors">
+                    <h3 className={`text-2xl md:text-3xl font-bold mb-4 group-hover:${project.colorClass} transition-colors`}>
                       {project.title}
                     </h3>
 
@@ -170,7 +195,7 @@ export default function Projects() {
                       {project.tech.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-slate-800/50 border border-slate-700/50 rounded text-sm font-sport hover:border-${project.color} transition-colors"
+                          className={`px-3 py-1 bg-slate-800/50 border border-slate-700/50 rounded text-sm font-sport ${project.hoverBorder} transition-colors`}
                         >
                           {tech}
                         </span>
@@ -181,7 +206,7 @@ export default function Projects() {
                     <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-slate-900/50 rounded-lg">
                       {Object.entries(project.stats).map(([key, value]) => (
                         <div key={key} className="text-center">
-                          <div className={`text-lg font-bold text-${project.color}`}>{value}</div>
+                          <div className={`text-lg font-bold ${project.colorClass}`}>{value}</div>
                           <div className="text-xs text-slate-500 uppercase tracking-wider">{key}</div>
                         </div>
                       ))}
@@ -194,7 +219,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-center gap-2 px-4 py-2 bg-${project.color}/10 border border-${project.color}/30 rounded-lg hover:bg-${project.color} hover:text-white transition-all font-sport text-sm`}
+                          className={`flex items-center gap-2 px-4 py-2 ${project.bgClass} border ${project.borderClass} rounded-lg ${project.hoverBg} hover:text-white transition-all font-sport text-sm`}
                         >
                           <Github className="w-4 h-4" />
                           Code
@@ -205,7 +230,7 @@ export default function Projects() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-center gap-2 px-4 py-2 bg-${project.color}/10 border border-${project.color}/30 rounded-lg hover:bg-${project.color} hover:text-white transition-all font-sport text-sm`}
+                          className={`flex items-center gap-2 px-4 py-2 ${project.bgClass} border ${project.borderClass} rounded-lg ${project.hoverBg} hover:text-white transition-all font-sport text-sm`}
                         >
                           <ExternalLink className="w-4 h-4" />
                           Demo

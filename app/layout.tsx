@@ -1,12 +1,26 @@
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Orbitron, Rajdhani } from "next/font/google"
 import { Nav } from "@/components/nav"
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+})
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+})
+
+const rajdhani = Rajdhani({
+  variable: "--font-rajdhani",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -58,7 +72,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${orbitron.variable} ${rajdhani.variable} antialiased`}>
         <Nav />
         {children}
       </body>

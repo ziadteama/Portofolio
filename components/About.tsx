@@ -9,19 +9,25 @@ export default function About() {
       icon: Code2,
       title: 'Software Developer',
       description: 'Building full-stack web applications with React, Next.js, and Express.js. Passionate about clean code and user experience.',
-      color: 'sport-blue',
+      color: '#00d4ff',
+      colorClass: 'text-sport-blue',
+      bgClass: 'bg-sport-blue/10',
     },
     {
       icon: Cpu,
       title: 'Embedded Systems Engineer',
       description: 'Working with C/C++ on automotive systems. Interested in IoT, real-time systems, and hardware-software integration.',
-      color: 'sport-green',
+      color: '#00ff88',
+      colorClass: 'text-sport-green',
+      bgClass: 'bg-sport-green/10',
     },
     {
       icon: Dumbbell,
       title: 'Triathlete',
       description: 'Committed to endurance sports: swimming, cycling, and running. Discipline from training translates to code.',
-      color: 'sport-orange',
+      color: '#ff6b35',
+      colorClass: 'text-sport-orange',
+      bgClass: 'bg-sport-orange/10',
     },
   ];
 
@@ -32,11 +38,11 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-transparent" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,8 +75,8 @@ export default function About() {
               whileHover={{ y: -10 }}
               className="glass-card p-8 group cursor-pointer"
             >
-              <div className={`w-14 h-14 rounded-xl bg-${identity.color}/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <identity.icon className={`w-7 h-7 text-${identity.color}`} />
+              <div className={`w-14 h-14 rounded-xl ${identity.bgClass} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <identity.icon className={`w-7 h-7 ${identity.colorClass}`} />
               </div>
               
               <h3 className="text-2xl font-bold mb-4">{identity.title}</h3>
