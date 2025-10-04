@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import { Project } from '@/data/projects';
 import { AlertCircle, CheckCircle, Lightbulb, Award, ArrowLeft, Github, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProjectStoryProps {

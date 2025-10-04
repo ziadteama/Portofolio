@@ -87,7 +87,7 @@ export default function Projects() {
                 <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 lg:items-center">
                   {/* Left column - shows card on odd indices */}
                   <div className="flex justify-end">
-                    {index % 2 !== 0 && <ProjectCard project={project} index={index} />}
+                    {index % 2 !== 0 && <ProjectCard project={project} />}
                   </div>
 
                   {/* Center checkpoint */}
@@ -97,13 +97,13 @@ export default function Projects() {
 
                   {/* Right column - shows card on even indices */}
                   <div className="flex justify-start">
-                    {index % 2 === 0 && <ProjectCard project={project} index={index} />}
+                    {index % 2 === 0 && <ProjectCard project={project} />}
                   </div>
                 </div>
 
                 {/* Mobile: Simple stacked layout */}
                 <div className="lg:hidden">
-                  <ProjectCard project={project} index={index} />
+                  <ProjectCard project={project} />
                 </div>
               </motion.div>
             ))}
