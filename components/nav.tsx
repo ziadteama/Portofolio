@@ -42,12 +42,12 @@ export const Nav = () => {
           : 'bg-transparent'
       }`}
     >
-  <div className="container mx-auto px-6 py-6">
+  <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-bold font-sport cursor-pointer group py-2"
+            className="text-xl sm:text-2xl font-bold font-sport cursor-pointer group py-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
