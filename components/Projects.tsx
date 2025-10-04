@@ -1,270 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Award } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { getFeaturedProjects } from '@/data/projects';
 
 export default function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: 'Supermarket Billing System',
-      description: 'Full-featured Windows application for managing supermarket operations with inventory tracking, billing, and reporting.',
-      tech: ['C#', 'WinForms', 'SQL Server', '.NET'],
-      category: 'Desktop Application',
-      stats: { users: '500+', performance: '98%', rating: '4.8/5' },
-      github: 'https://github.com/ziadteama',
-      demo: null,
-      color: '#00d4ff',
-      colorClass: 'text-sport-blue',
-      bgClass: 'bg-sport-blue/10',
-      borderClass: 'border-sport-blue/30',
-      hoverBorder: 'hover:border-sport-blue',
-      hoverBg: 'hover:bg-sport-blue',
-      checkpoint: 1,
-    },
-    {
-      id: 2,
-      title: 'University Management System',
-      description: 'Comprehensive multi-role system for managing students, faculty, courses, and grades with advanced authentication.',
-      tech: ['Java', 'JavaFX', 'MySQL', 'JDBC'],
-      category: 'Enterprise System',
-      stats: { roles: '5', modules: '12', uptime: '99.9%' },
-      github: 'https://github.com/ziadteama',
-      demo: null,
-      color: '#00ff88',
-      colorClass: 'text-sport-green',
-      bgClass: 'bg-sport-green/10',
-      borderClass: 'border-sport-green/30',
-      hoverBorder: 'hover:border-sport-green',
-      hoverBg: 'hover:bg-sport-green',
-      checkpoint: 2,
-    },
-    {
-      id: 3,
-      title: 'Book Rating Platform',
-      description: 'Dynamic web app for book reviews and ratings with user authentication, search functionality, and real-time updates.',
-      tech: ['Express.js', 'EJS', 'MongoDB', 'Node.js'],
-      category: 'Full-Stack Web App',
-      stats: { books: '1000+', reviews: '5000+', users: '200+' },
-      github: 'https://github.com/ziadteama',
-      demo: 'https://example.com',
-      color: '#ff6b35',
-      colorClass: 'text-sport-orange',
-      bgClass: 'bg-sport-orange/10',
-      borderClass: 'border-sport-orange/30',
-      hoverBorder: 'hover:border-sport-orange',
-      hoverBg: 'hover:bg-sport-orange',
-      checkpoint: 3,
-    },
-    {
-      id: 4,
-      title: 'React Dashboard',
-      description: 'Modern, responsive admin dashboard with data visualization, real-time analytics, and REST API integration.',
-      tech: ['React', 'TypeScript', 'Chart.js', 'REST API'],
-      category: 'Frontend Application',
-      stats: { components: '50+', charts: '15', responsive: '100%' },
-      github: 'https://github.com/ziadteama',
-      demo: 'https://example.com',
-      color: '#00d4ff',
-      colorClass: 'text-sport-blue',
-      bgClass: 'bg-sport-blue/10',
-      borderClass: 'border-sport-blue/30',
-      hoverBorder: 'hover:border-sport-blue',
-      hoverBg: 'hover:bg-sport-blue',
-      checkpoint: 4,
-    },
-    {
-      id: 5,
-      title: 'Data Analysis Pipeline',
-      description: 'Automated data processing and machine learning pipeline for predictive analytics using Python libraries.',
-      tech: ['Python', 'Pandas', 'Scikit-learn', 'PostgreSQL'],
-      category: 'Data Science',
-      stats: { accuracy: '94%', datasets: '10+', models: '5' },
-      github: 'https://github.com/ziadteama',
-      demo: null,
-      color: '#00ff88',
-      colorClass: 'text-sport-green',
-      bgClass: 'bg-sport-green/10',
-      borderClass: 'border-sport-green/30',
-      hoverBorder: 'hover:border-sport-green',
-      hoverBg: 'hover:bg-sport-green',
-      checkpoint: 5,
-    },
-  ];
-
+  const projects = getFeaturedProjects();
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Race Track Background */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 1000 1000">
-          <path
-            d="M 100 500 Q 300 100, 500 500 T 900 500"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-            className="text-sport-blue"
-          />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-8 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <span className="text-sport-orange font-sport text-sm uppercase tracking-[0.3em] font-semibold">
-            Project Journey
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
-            Race <span className="text-sport-orange">Checkpoints</span>
-          </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Each project is a checkpoint in my development journey. Click to explore the tech, challenges, and achievements.
-          </p>
-        </motion.div>
-
-        {/* Projects Timeline */}
-        <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sport-blue via-sport-green to-sport-orange" />
-
-          {/* Projects */}
-          <div className="space-y-24">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative grid md:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 0 ? '' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Checkpoint Marker */}
-                <motion.div
-                  className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full items-center justify-center z-20 border-4 border-slate-950"
-                  style={{ backgroundColor: project.color }}
-                  whileHover={{ scale: 1.2 }}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.3, type: 'spring' }}
-                >
-                  <span className="font-sport font-bold text-xl text-white">
-                    {project.checkpoint}
-                  </span>
-                </motion.div>
-
-                {/* Project Card */}
-                <motion.div
-                  className={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'} group`}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className={`glass-card p-8 ${project.hoverBorder} transition-all duration-300`}>
-                    {/* Category Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`text-xs font-sport uppercase tracking-wider px-3 py-1 rounded-full ${project.bgClass} ${project.colorClass} border ${project.borderClass}`}>
-                        {project.category}
-                      </span>
-                      {project.stats.rating && (
-                        <div className="flex items-center gap-1 text-yellow-400">
-                          <Award className="w-4 h-4" />
-                          <span className="text-sm font-bold">{project.stats.rating}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className={`text-2xl md:text-3xl font-bold mb-4 group-hover:${project.colorClass} transition-colors`}>
-                      {project.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-slate-400 mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className={`px-3 py-1 bg-slate-800/50 border border-slate-700/50 rounded text-sm font-sport ${project.hoverBorder} transition-colors`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-slate-900/50 rounded-lg">
-                      {Object.entries(project.stats).map(([key, value]) => (
-                        <div key={key} className="text-center">
-                          <div className={`text-lg font-bold ${project.colorClass}`}>{value}</div>
-                          <div className="text-xs text-slate-500 uppercase tracking-wider">{key}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-3">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`flex items-center gap-2 px-4 py-2 ${project.bgClass} border ${project.borderClass} rounded-lg ${project.hoverBg} hover:text-white transition-all font-sport text-sm`}
-                        >
-                          <Github className="w-4 h-4" />
-                          Code
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`flex items-center gap-2 px-4 py-2 ${project.bgClass} border ${project.borderClass} rounded-lg ${project.hoverBg} hover:text-white transition-all font-sport text-sm`}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          Demo
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Empty space for alternating layout */}
-                <div className={`hidden md:block ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`} />
-              </motion.div>
-            ))}
-          </div>
+    <section id="projects" className="py-16 sm:py-24 md:py-32">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <div className="space-y-8">
+          {projects.map((p) => (
+            <Link key={p.id} href={`/projects/${p.slug}`} className="block">
+              <div className={`glass-card p-6 border-2 ${p.borderClass}`}>
+                <h3 className="text-2xl font-bold mb-2">{p.title}</h3>
+                <p className="text-slate-400">{p.shortDescription}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-20"
-        >
-          <p className="text-slate-400 mb-6">Want to see more of my work?</p>
-          <a
-            href="https://github.com/ziadteama"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-sport-blue to-sport-green rounded-lg font-sport font-bold hover:shadow-lg hover:shadow-sport-blue/50 transition-all hover:scale-105"
-          >
-            <Github className="w-5 h-5" />
-            View All on GitHub
-          </a>
-        </motion.div>
+        <div className="text-center mt-12">
+          <Link href="/projects" className="px-8 py-4 bg-sport-blue rounded-lg inline-block">View All</Link>
+        </div>
       </div>
     </section>
   );
