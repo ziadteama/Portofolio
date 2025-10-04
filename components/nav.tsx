@@ -56,7 +56,7 @@ export const Nav = () => {
           </motion.button>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-10">
+          <ul className="hidden md:flex items-center gap-6 lg:gap-10">
             {navLinks.map((link, index) => (
               <motion.li
                 key={link.text}
@@ -66,7 +66,7 @@ export const Nav = () => {
               >
                 <button
                   onClick={() => scrollToSection(link.href)}
-                  className="font-sport text-sm uppercase tracking-wider text-slate-300 hover:text-sport-blue transition-colors relative group py-2 px-1"
+                  className="font-sport text-xs lg:text-sm uppercase tracking-wider text-slate-300 hover:text-sport-blue transition-colors relative group py-2 px-1"
                 >
                   {link.text}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sport-blue group-hover:w-full transition-all duration-300" />
@@ -92,10 +92,10 @@ export const Nav = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-sport-blue transition-colors"
+            className="md:hidden p-2 -mr-2 text-white hover:text-sport-blue transition-colors"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -105,23 +105,23 @@ export const Nav = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 py-4 border-t border-slate-800/50"
+            className="md:hidden mt-4 pb-4 border-t border-slate-800/50"
           >
-            <ul className="space-y-4">
+            <ul className="space-y-2 pt-4">
               {navLinks.map((link) => (
                 <li key={link.text}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left font-sport text-sm uppercase tracking-wider text-slate-300 hover:text-sport-blue transition-colors py-2"
+                    className="block w-full text-left font-sport text-xs uppercase tracking-wider text-slate-300 hover:text-sport-blue hover:bg-slate-800/30 transition-colors py-3 px-4 rounded-lg"
                   >
                     {link.text}
                   </button>
                 </li>
               ))}
-              <li>
+              <li className="pt-2">
                 <button
                   onClick={() => scrollToSection('#contact')}
-                  className="w-full btn-sport-sm"
+                  className="w-full btn-sport-sm text-center"
                 >
                   Hire Me
                 </button>
