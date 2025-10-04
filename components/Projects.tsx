@@ -85,19 +85,19 @@ export default function Projects() {
               >
                 {/* Desktop: Cards alternate sides with checkpoint in center */}
                 <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 lg:items-center">
-                  {/* Left side */}
-                  <div className={index % 2 === 0 ? '' : 'order-3'}>
-                    {index % 2 === 0 && <ProjectCard project={project} index={index} />}
+                  {/* Left column - shows card on odd indices */}
+                  <div className="flex justify-end">
+                    {index % 2 !== 0 && <ProjectCard project={project} index={index} />}
                   </div>
 
                   {/* Center checkpoint */}
-                  <div className="order-2">
+                  <div className="flex-shrink-0">
                     <Checkpoint number={project.checkpoint} color={project.color} slug={project.slug} />
                   </div>
 
-                  {/* Right side */}
-                  <div className={index % 2 === 0 ? 'order-3' : ''}>
-                    {index % 2 !== 0 && <ProjectCard project={project} index={index} />}
+                  {/* Right column - shows card on even indices */}
+                  <div className="flex justify-start">
+                    {index % 2 === 0 && <ProjectCard project={project} index={index} />}
                   </div>
                 </div>
 
