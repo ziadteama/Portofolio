@@ -10,39 +10,39 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 pt-20 pb-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 pt-20 pb-16 px-4 sm:px-6">
       <div className="absolute inset-0 z-0">
         <motion.div
-          className="absolute top-20 -left-20 h-96 w-96 rounded-full blur-3xl opacity-30"
+          className="absolute top-20 -left-20 h-64 w-64 sm:h-96 sm:w-96 rounded-full blur-3xl opacity-30"
           style={{ background: 'radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%)' }}
           animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full blur-3xl opacity-20"
+          className="absolute bottom-0 right-0 h-64 w-64 sm:h-[400px] sm:w-[400px] rounded-full blur-3xl opacity-20"
           style={{ background: 'radial-gradient(circle, rgba(0, 255, 136, 0.4) 0%, transparent 70%)' }}
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-5 sm:space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 rounded-full border border-sport-blue/40 bg-slate-900/60 px-4 py-2 backdrop-blur"
+              className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-sport-blue/40 bg-slate-900/60 px-3 sm:px-4 py-1.5 sm:py-2 backdrop-blur text-center"
             >
               <span className="h-2 w-2 rounded-full bg-sport-green animate-pulse" />
-              <span className="font-sport text-xs uppercase tracking-[0.3em] text-slate-300">
-                Engineer  Developer  Triathlete
+              <span className="font-sport text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-slate-300">
+                Engineer · Developer · Triathlete
               </span>
             </motion.div>
 
@@ -51,13 +51,13 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
                 <span className="block text-white">Ziad Teama</span>
                 <span className="block bg-gradient-to-r from-sport-blue via-sport-green to-sport-orange bg-clip-text text-transparent">
                   Always in motion.
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
                 Computer engineering student hunting for freelance and remote opportunities in software development. 
                 Specialized in full-stack web applications with a solid foundation in IoT and embedded systems. 
                 I bring the same relentless energy from triathlon training to shipping quality code.
@@ -133,20 +133,20 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-2xl p-4 shadow-xl"
+                className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl"
               >
-                <div className="flex gap-6">
+                <div className="flex gap-3 sm:gap-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-sport-blue font-sport">10+</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider">Projects</div>
+                    <div className="text-xl sm:text-2xl font-bold text-sport-blue font-sport">10+</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-sport-green font-sport">5</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider">Tech Stacks</div>
+                    <div className="text-xl sm:text-2xl font-bold text-sport-green font-sport">5</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Tech Stacks</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-sport-orange font-sport">3</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider">Sports</div>
+                    <div className="text-xl sm:text-2xl font-bold text-sport-orange font-sport">3</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Sports</div>
                   </div>
                 </div>
               </motion.div>

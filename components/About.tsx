@@ -38,33 +38,33 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/20 to-transparent" />
 
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <span className="text-sport-blue font-sport text-sm uppercase tracking-[0.3em] font-semibold">
+          <span className="text-sport-blue font-sport text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold">
             Who I Am
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4 sm:mb-6">
             Software Engineer.<br className="md:hidden" /> Systems Developer.<br className="md:hidden" /> Problem Solver.
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto px-4">
             I build real software that runs in production. From full-stack web apps to embedded systems — 
             I&apos;ve deployed solutions that people and businesses use every day.
           </p>
         </motion.div>
 
         {/* Identity Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-20">
           {identities.map((identity, index) => (
             <motion.div
               key={identity.title}
@@ -73,14 +73,14 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="glass-card p-8 group cursor-pointer"
+              className="glass-card p-6 sm:p-8 group cursor-pointer"
             >
-              <div className={`w-14 h-14 rounded-xl ${identity.bgClass} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <identity.icon className={`w-7 h-7 ${identity.colorClass}`} />
+              <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${identity.bgClass} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform`}>
+                <identity.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${identity.colorClass}`} />
               </div>
               
-              <h3 className="text-2xl font-bold mb-4">{identity.title}</h3>
-              <p className="text-slate-400 leading-relaxed">{identity.description}</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{identity.title}</h3>
+              <p className="text-sm sm:text-base text-slate-400 leading-relaxed">{identity.description}</p>
             </motion.div>
           ))}
         </div>
@@ -91,14 +91,14 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-card p-8 md:p-12"
+          className="glass-card p-6 sm:p-8 md:p-12"
         >
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
                 <span className="text-sport-orange">Production-Ready</span> Code
               </h3>
-              <p className="text-slate-400 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6 leading-relaxed">
                 I don&apos;t just write code — I build systems that scale. My experience ranges from web applications 
                 handling real users to embedded systems running 24/7 in production environments.
               </p>
@@ -115,7 +115,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3 text-slate-300"
+                    className="flex items-center gap-3 text-sm sm:text-base text-slate-300"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-sport-orange" />
                     {lesson}
