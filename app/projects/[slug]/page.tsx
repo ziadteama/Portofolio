@@ -6,8 +6,9 @@ export async function generateStaticParams() {
   return getAllProjectSlugs();
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -16,8 +17,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   return <ProjectStory project={project} />;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
